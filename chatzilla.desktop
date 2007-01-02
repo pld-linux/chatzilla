@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Mozilla Chat
-Name[pl]=Chat Mozilli
-Exec=mozilla -chat
-Icon=mozilla.png
+Name=Mozilla ChatZilla
+#Name[pl]=Chat Mozilli
+Exec=chatzilla
+Icon=/usr/share/chatzilla/chrome/icons/default/chatzilla-window.xpm
 Terminal=false
 Type=Application
 Categories=Network;IRCClient;
