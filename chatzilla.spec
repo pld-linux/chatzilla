@@ -31,7 +31,7 @@ exec %{_bindir}/xulrunner %{_appdir}/application.ini
 EOF
 chmod a+x $RPM_BUILD_ROOT%{_bindir}/%{name}
 cp -a application.ini $RPM_BUILD_ROOT%{_appdir}
-cp -a chrome components defaults $RPM_BUILD_ROOT%{_appdir}
+cp -a chrome components defaults extensions $RPM_BUILD_ROOT%{_appdir}
 cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %clean
@@ -47,5 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_appdir}/components/*.js
 %{_appdir}/chrome
 %{_appdir}/defaults
+%dir %{_appdir}/extensions
+%{_appdir}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 
 %{_desktopdir}/chatzilla.desktop
