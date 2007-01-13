@@ -1,4 +1,5 @@
 Summary:	IRC in Mozilla, aka ChatZilla
+Summary(pl):	IRC w Mozilli, znany te¿ jako ChatZilla
 Name:		chatzilla
 Version:	0.9.77
 Release:	1
@@ -17,6 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 ChatZilla is an IRC client that is written entirely in JavaScript and
 XUL.
+
+%description -l pl
+ChatZilla to klient IRC-a napisany ca³kowicie w JavaScripcie i XUL-u.
 
 %prep
 %setup -qc
