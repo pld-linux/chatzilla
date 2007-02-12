@@ -1,5 +1,5 @@
 Summary:	IRC in Mozilla, aka ChatZilla
-Summary(pl.UTF-8):   IRC w Mozilli, znany też jako ChatZilla
+Summary(pl.UTF-8):	IRC w Mozilli, znany też jako ChatZilla
 Name:		chatzilla
 Version:	0.9.77
 Release:	1
