@@ -1,15 +1,15 @@
 Summary:	IRC in Mozilla, aka ChatZilla
 Summary(pl.UTF-8):	IRC w Mozilli, znany też jako ChatZilla
 Name:		chatzilla
-Version:	0.9.83
+Version:	0.9.84
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://chatzilla.rdmsoft.com/xulrunner/download/%{name}-%{version}-xr.zip
-# Source0-md5:	3c08f9eac4314627248e995c5bd57aca
+# Source0-md5:	d1adc7cd2a9557bb8a2ec91f67509fc4
 Source1:	%{name}.desktop
 URL:		http://chatzilla.rdmsoft.com/xulrunner/
-Requires:	xulrunner
+Requires:	xulrunner >= 1.9.0.4
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
