@@ -9,6 +9,7 @@ Source0:	http://chatzilla.rdmsoft.com/xulrunner/download/%{name}-%{version}-xr.z
 # Source0-md5:	8ff7d358081a0944fbae3f2144591abc
 Source1:	%{name}.desktop
 URL:		http://chatzilla.rdmsoft.com/xulrunner/
+BuildRequires:	unzip
 Requires:	xulrunner >= 1.9.0.4
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
