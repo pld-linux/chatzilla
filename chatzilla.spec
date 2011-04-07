@@ -1,12 +1,12 @@
 Summary:	IRC in Mozilla, aka ChatZilla
 Summary(pl.UTF-8):	IRC w Mozilli, znany też jako ChatZilla
 Name:		chatzilla
-Version:	0.9.86
+Version:	0.9.86.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://chatzilla.rdmsoft.com/xulrunner/download/%{name}-%{version}-xr.zip
-# Source0-md5:	8ff7d358081a0944fbae3f2144591abc
+# Source0-md5:	4ba49087521f6c0cb0eb6ca6a4797f72
 Source1:	%{name}.desktop
 URL:		http://chatzilla.rdmsoft.com/xulrunner/
 BuildRequires:	unzip
@@ -26,18 +26,19 @@ ChatZilla to klient IRC-a napisany całkowicie w JavaScripcie i XUL-u.
 %prep
 %setup -qc
 
+cat <<'EOF' > %{name}.sh
+#!/bin/sh
+exec %{_bindir}/xulrunner %{_appdir}/application.ini
+EOF
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir},%{_desktopdir}}
 
-cat <<'EOF' > $RPM_BUILD_ROOT%{_bindir}/%{name}
-#!/bin/sh
-exec %{_bindir}/xulrunner %{_appdir}/application.ini
-EOF
-chmod a+x $RPM_BUILD_ROOT%{_bindir}/%{name}
-cp -a application.ini $RPM_BUILD_ROOT%{_appdir}
+install -p %{name}.sh $RPM_BUILD_ROOT%{_bindir}/%{name}
+cp -p application.ini $RPM_BUILD_ROOT%{_appdir}
 cp -a chrome components defaults extensions $RPM_BUILD_ROOT%{_appdir}
-cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
